@@ -8,7 +8,7 @@ class Serie extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'name',
+        'nome',
     ];
 
     public function episodios()

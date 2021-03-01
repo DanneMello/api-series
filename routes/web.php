@@ -26,6 +26,8 @@ $router->group(['prefix' => '/api'], function () use($router)
         $router->get('{id}', 'SeriesController@show');
         $router->put('{id}', 'SeriesController@update');
         $router->delete('{id}', 'SeriesController@destroy');
+
+        $router->get('{serieId}/episodios', 'EpisodiosController@buscaPorSerie');
     });
 
     # Rotas para os episódios das séries

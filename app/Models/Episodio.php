@@ -3,7 +3,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Serie extends Model
+class Episodio extends Model
 {
     public $timestamps = false;
 
@@ -11,10 +11,16 @@ class Serie extends Model
         'temporada',
         'numero',
         'assistido',
+        'serie_id',
     ];
 
     public function serie()
     {
         return $this->belongsTo(Serie::class);
+    }
+
+    public function getAssistidoAttribute($assistido): bool
+    {
+        return $assistido;
     }
 }
